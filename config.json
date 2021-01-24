@@ -1,5 +1,7 @@
 {
-  "title": "Brevifolia",
-  "description": "Starter blog using Forestry CMS with Gatsby.",
-  "repository_url": "https://github.com/kendallstrautman/starter-blog-gatsby"
+  "title": "Jam Shop | Solution",
+  "description": "A solution by Jaco Kotzee",
+  "repository_url": "https://github.com/jakwakwa/bej-jamshop",
+  "lang": "en",
+  "author": "Jaco Kotzee"
 }

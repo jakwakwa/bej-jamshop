@@ -9,9 +9,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <main sx={{ paddingTop: 50 }}>
-        {children}
-      </main>
+      <main sx={{ paddingTop: 50 }}>{children}</main>
       <footer />
     </>
   )

@@ -9,7 +9,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop -o",
     "develop": "yarn dev",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write \"src/**/*.js\"",
     "start": "yarn dev",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",

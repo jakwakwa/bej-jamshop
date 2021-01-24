@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import React from "react"
-import { jsx, Styled } from "theme-ui"
-import { Row, Col } from "../../Grid"
+import { jsx } from "theme-ui"
 
-const ProductList = () => {
+function ProductList() {
   return (
     <section sx={{ paddingTop: [0, 160] }}>
       <h2>Explore community choices</h2>

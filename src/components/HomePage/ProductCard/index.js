@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx } from "theme-ui"
-// import { Row, Col } from "../../Grid"
 import HeroDummy from "../../../../content/images/elements/hero_background.svg"
 
 const ProductCard = () => {
