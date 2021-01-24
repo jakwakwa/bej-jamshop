@@ -8,8 +8,7 @@ export default function Layout(props) {
   const { title, description } = useSiteMetadata()
   return (
     <section
-      className={`${layoutStyles.layout} ${
-        props.page === "info" && 
+      className={`${layoutStyles.layout} ${props.page === "info" &&
         layoutStyles.info_page}`}
       style={{
         backgroundColor: props.bgColor,
