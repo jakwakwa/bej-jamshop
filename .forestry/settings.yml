@@ -33,5 +33,5 @@ build:
   install_dependencies_command: yarn install
   preview_docker_image: forestryio/node:12
   mount_path: "/srv"
-  working_dir: "/srv"
+  working_dir: "/srv/public"
   instant_preview_command: yarn forestry-preview
