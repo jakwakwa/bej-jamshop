@@ -9,6 +9,7 @@ const useProducts = () => {
             name
             excerpt
             slug
+            price
           }
         }
       }
@@ -19,6 +20,7 @@ const useProducts = () => {
     image: product.frontmatter.image,
     excerpt: product.frontmatter.excerpt,
     slug: product.frontmatter.slug,
+    price: product.frontmatter.price,
   }))
 }
 

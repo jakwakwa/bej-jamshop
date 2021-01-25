@@ -2,9 +2,8 @@
 import React from "react"
 import { jsx } from "theme-ui"
 import HeroDummy from "../../../../content/images/products/dumy.svg"
-import { Link } from "gatsby"
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onSubmit }) => {
   const { name, excerpt, slug } = product
 
   return (
@@ -13,10 +12,8 @@ const ProductCard = ({ product }) => {
         <img src={HeroDummy} sx={styles.prodImg} />
         <h3>{name}</h3>
         <p>{excerpt}</p>
-        <div sx={styles.buttonWrapper}>
-          <Link sx={styles.addToCartBtn} to={`product/${slug}`}>
-            +
-          </Link>
+        <div>
+          <input type="submit" value="add" onClick={onSubmit} />
         </div>
       </div>
     </section>

@@ -1,47 +1,38 @@
 /** @jsx jsx */
 import React from "react"
-
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Hero from "../components/HomePage/Hero"
+import useProductData from "../static_queries/useProductData.js"
 import { Container, Row, Col } from "../components/Grid"
-import { jsx } from "theme-ui"
-import useProductData from "../static_queries/useProductData"
-import ProductList from "../components/HomePage/ProductList"
-import ProductCard from "../components/HomePage/ProductCard"
+import Layout from "../components/Layout/index"
+import { jsx, Styled } from "theme-ui"
+import SEO from "../components/SEO"
+import Hero from "../components/HomePage/Hero/index"
+import ProductList from "../components/HomePage/ProductList/index"
+import Cart from "../components/Cart/index"
 
-export default function IndexPage() {
+function IndexPage() {
   const products = useProductData()
   return (
     <Layout>
       <SEO title="Home" />
+      <Hero />
       <Container>
-        <Hero />
-        <ProductList />
-        <Container styles={styles.prodListMargin}>
-          <Row styles={styles.cardCols}>
-            {products.map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
-          </Row>
-        </Container>
+        <Row>
+          <ProductList />
+        </Row>
+        <Row>
+          <section sx={styles.cart}>
+            <Cart products={products} />
+          </section>
+        </Row>
       </Container>
     </Layout>
   )
 }
 
+export default IndexPage
+
 const styles = {
-  cardCols: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    "> section": {
-      margin: "20px 0 0 20px",
-      flexGrow: 1,
-      width: "calc(100% * (1/4) - 20px - 1px)",
-    },
-  },
-  prodListMargin: {
+  cart: {
     marginTop: "50px",
     marginBottom: "200px",
   },
