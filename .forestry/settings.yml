@@ -31,7 +31,7 @@ file_template: ":filename:"
 build:
   preview_output_directory: public
   install_dependencies_command: yarn install
-  preview_docker_image: node:10
+  preview_docker_image: forestryio/node:12
   mount_path: "/srv"
-  working_dir: "/srv/public"
+  working_dir: "/srv"
   instant_preview_command: yarn forestry-preview
