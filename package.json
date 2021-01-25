@@ -1,7 +1,7 @@
 {
   "name": "foresry-starter-blog-gatsby",
-  "private": true,
-  "description": "A simple starter blog to get up and developing quickly with Forestry & Gatsby",
+  "private": false,
+  "description": "Jaco's Jamshop Solution",
   "license": "MIT",
   "version": "0.1.0",
   "author": "kendall strautman",
@@ -53,6 +53,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kendallstrautman/brevifolia-gatsby-forestry"
+    "url": "https://github.com/jakwakwa/bej-jamshop"
   }
 }
