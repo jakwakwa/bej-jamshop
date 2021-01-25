@@ -70,8 +70,8 @@ export default {
       color: "text.body",
       backgroundColor: "background.primary",
       "*": {
-        "-webkit-font-smoothing": "antialiased",
-        "-moz-osx-font-smoothing": "grayscale",
+        WebkitFontSmoothing: "antialiased",
+        MozOsxFontSmoothing: "grayscale",
       },
     },
     h1: {

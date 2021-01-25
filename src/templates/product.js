@@ -51,14 +51,15 @@ export default function Product({ data }) {
 
 //dynamic page query, must occur within each post context
 //$slug is made available by context from createPages call in gatsby-node.js
-export const getProductData = graphql`
-  query {
-    markdownRemark {
+export const pageQuery = graphql`
+  query($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      html
       frontmatter {
         slug
         name
-        description
         price
+        description
         tag
       }
     }

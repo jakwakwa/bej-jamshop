@@ -6,6 +6,7 @@ import { Link } from "gatsby"
 
 const ProductCard = ({ product }) => {
   const { name, excerpt, slug } = product
+
   return (
     <section>
       <div sx={styles.productWrapper}>

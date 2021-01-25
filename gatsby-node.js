@@ -26,6 +26,10 @@ module.exports.createPages = async ({ graphql, actions }) => {
       path: `/product/${node.frontmatter.slug}`,
       context: {
         slug: node.frontmatter.slug,
+        name: node.frontmatter.name,
+        price: node.frontmatter.price,
+        description: node.frontmatter.slug,
+        tag: node.frontmatter.slug,
       },
     })
   })
