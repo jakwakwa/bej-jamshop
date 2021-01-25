@@ -26,6 +26,7 @@ fields:
     maxSize: 64
   label: Image
 pages:
+- content/products/basic_dummy.md
 - content/products/basic_dummy_x.md
 - content/products/dummy_club.md
 - content/products/dummy_x_pro.md
