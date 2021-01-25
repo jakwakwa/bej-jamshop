@@ -6,10 +6,12 @@ import SEO from "../components/SEO"
 import Hero from "../components/HomePage/Hero"
 import { Container, Row, Col } from "../components/Grid"
 import { jsx } from "theme-ui"
+import useProductData from "../static_queries/useProductData"
 import ProductList from "../components/HomePage/ProductList"
 import ProductCard from "../components/HomePage/ProductCard"
 
 export default function IndexPage() {
+  const products = useProductData()
   return (
     <Layout>
       <SEO title="Home" />
@@ -18,10 +20,9 @@ export default function IndexPage() {
         <ProductList />
         <Container styles={styles.prodListMargin}>
           <Row styles={styles.cardCols}>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {products.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))}
           </Row>
         </Container>
       </Container>

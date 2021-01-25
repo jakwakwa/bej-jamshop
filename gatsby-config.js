@@ -11,12 +11,13 @@ module.exports = {
     contact: config.contact,
     primaryColor: config.primary_color,
     infoData: infoData,
+    author: config.author,
   },
   plugins: [
-    "gatsby-plugin-sass",
     "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-yaml",
+    "gatsby-plugin-theme-ui",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -24,20 +25,20 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "posts",
-    //     path: `${__dirname}/content/posts`,
-    //   },
-    // },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "data",
-    //     path: `${__dirname}/content/data`,
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: `${__dirname}/content/products`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "data",
+        path: `${__dirname}/content/data`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

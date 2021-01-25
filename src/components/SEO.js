@@ -2,13 +2,12 @@ import React from "react"
 // import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import useSiteMetadata from "../static_queries/useSiteMetadata"
-// import { useStaticQuery, graphql } from "gatsby"
 
 export default function SEO() {
-  const { title, description } = useSiteMetadata()
+  const { title, description, lang } = useSiteMetadata()
   return (
     <Helmet>
-      <html lang="en" />
+      <html lang={lang} />
       <title>{title}</title>
       <meta name="description" content={description} />
     </Helmet>

@@ -1,17 +1,21 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx } from "theme-ui"
-import HeroDummy from "../../../../content/images/elements/hero_background.svg"
+import HeroDummy from "../../../../content/images/products/dumy.svg"
+import { Link } from "gatsby"
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
+  const { name, excerpt, slug } = product
   return (
     <section>
       <div sx={styles.productWrapper}>
         <img src={HeroDummy} sx={styles.prodImg} />
-        <h3>Great Dummy</h3>
-        <p>Something that you trully need, but haven’t know about it yet</p>
+        <h3>{name}</h3>
+        <p>{excerpt}</p>
         <div sx={styles.buttonWrapper}>
-          <button sx={styles.addToCartBtn}>+</button>
+          <Link sx={styles.addToCartBtn} to={`product/${slug}`}>
+            <button sx={styles.addToCartBtn}>+</button>
+          </Link>
         </div>
       </div>
     </section>
@@ -29,6 +33,7 @@ const styles = {
   },
 
   productWrapper: {
+    position: "relative",
     border: "3px solid #969393",
     padding: "20px",
     borderRadius: "2px",
@@ -37,6 +42,9 @@ const styles = {
   buttonWrapper: {
     display: "flex",
     justifyContent: "flex-end",
+    position: "absolute",
+    right: "8px",
+    bottom: "8px",
   },
 
   addToCartBtn: {

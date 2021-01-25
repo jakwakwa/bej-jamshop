@@ -34,7 +34,7 @@ export default HomepageHero
 
 const styles = {
   heading: {
-    variant: "text.heading",
+    variant: "text.home",
     position: "relative",
     ml: [null, null, null, "30px"],
     textAlign: ["center", null, "left"],
