@@ -2,6 +2,7 @@
 import React from "react"
 import { jsx } from "theme-ui"
 import HeroDummy from "../../../../content/images/products/dumy.svg"
+import { Link } from "gatsby"
 
 const ProductCard = ({ product, onSubmit }) => {
   const { name, excerpt, slug } = product
@@ -10,10 +11,18 @@ const ProductCard = ({ product, onSubmit }) => {
     <section>
       <div sx={styles.productWrapper}>
         <img src={HeroDummy} sx={styles.prodImg} />
-        <h3>{name}</h3>
+        <Link sx={{ variant: "text.link" }} to={`product/${slug}`}>
+          <h3>{name}</h3>
+        </Link>
+
         <p>{excerpt}</p>
-        <div>
-          <input type="submit" value="add" onClick={onSubmit} />
+        <div sx={styles.buttonWrapper}>
+          <input
+            sx={styles.addToCartBtn}
+            type="submit"
+            value="+"
+            onClick={onSubmit}
+          />
         </div>
       </div>
     </section>
@@ -35,6 +44,7 @@ const styles = {
     border: "3px solid #969393",
     padding: "20px",
     borderRadius: "2px",
+    height: "300px",
   },
 
   buttonWrapper: {

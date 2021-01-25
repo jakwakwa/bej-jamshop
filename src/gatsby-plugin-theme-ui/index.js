@@ -165,7 +165,7 @@ export default {
       fontWeight: 400,
     },
     link: {
-      color: "text.accent",
+      color: WHITE,
       textDecoration: "none",
       fontWeight: "500",
       "&:hover": {

@@ -15,15 +15,11 @@ function IndexPage() {
     <Layout>
       <SEO title="Home" />
       <Hero />
-      <Container>
+      <Container sx={{ paddingBottom: "200px" }}>
         <Row>
           <ProductList />
         </Row>
-        <Row>
-          <section sx={styles.cart}>
-            <Cart products={products} />
-          </section>
-        </Row>
+        <Cart products={products} />
       </Container>
     </Layout>
   )
@@ -34,6 +30,5 @@ export default IndexPage
 const styles = {
   cart: {
     marginTop: "50px",
-    marginBottom: "200px",
   },
 }
