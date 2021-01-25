@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
         <p>{excerpt}</p>
         <div sx={styles.buttonWrapper}>
           <Link sx={styles.addToCartBtn} to={`product/${slug}`}>
-            <button sx={styles.addToCartBtn}>+</button>
+            +
           </Link>
         </div>
       </div>

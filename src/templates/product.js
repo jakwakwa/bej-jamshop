@@ -7,13 +7,8 @@ import { graphql } from "gatsby"
 import { Container, Row, Col } from "../components/Grid"
 
 import HeroBackground from "../../content/images/elements/hero_background.svg"
-import HeroImage from "../../content/images/elements/monitor.svg"
 import HeroDecor from "../../content/images/elements/hero_decor.svg"
 import HeroDummy from "../../content/images/products/dumy.svg"
-
-// import useProductData from "../static_queries/useProductData"
-//this component handles the blur img & fade-ins
-// import Img from "gatsby-image"
 
 export default function Product({ data }) {
   const { markdownRemark } = data
@@ -25,7 +20,7 @@ export default function Product({ data }) {
       <section sx={{ paddingTop: [60, 60, 105] }}>
         <Row styles={{ justifyContent: ["center"] }}>
           <Col styles={styles.imgWrapper}>
-            <img src={HeroDummy} alt="HeroDummy" xs={styles.prodImg} />
+            <img src={HeroDummy} alt="HeroDummy" />
           </Col>
           <Col styles={styles.leadWrapper}>
             <div>
@@ -43,8 +38,6 @@ export default function Product({ data }) {
         </Row>
         <img src={HeroBackground} sx={styles.backgroundImg} />
       </section>
-
-      <Container></Container>
     </Layout>
   )
 }
@@ -65,38 +58,7 @@ export const pageQuery = graphql`
     }
   }
 `
-// const nextSlug = getNextSlug(data.fields.slug)
-
-// function getNextSlug(slug) {
-//   const allSlugs = allBlogData.map(blog => {
-//     return blog.node.fields.slug
-//   })
-//   const nextSlug = allSlugs[allSlugs.indexOf(slug) + 1]
-//   if (nextSlug !== undefined && nextSlug !== "") {
-//     return nextSlug
-//   } else {
-//     return allSlugs[0]
-//   }
-// }
 const styles = {
-  heading: {
-    variant: "text.body",
-    position: "relative",
-    ml: [null, null, null, "30px"],
-    textAlign: ["center", null, "left"],
-    textShadow: "1px 2px rgba(0, 0, 0, .2)",
-    "::after": {
-      position: "absolute",
-      content: `url("${HeroDecor}")`,
-      width: "97px",
-      height: "43px",
-      top: -15,
-      right: -55,
-      display: ["none", null, null, "block"],
-      zIndex: -1,
-    },
-  },
-
   imgWrapper: {
     width: ["1", "1", "2/5", null, 450],
     textAlign: ["center", "center", "left"],
