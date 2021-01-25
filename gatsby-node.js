@@ -30,6 +30,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
         price: node.frontmatter.price,
         description: node.frontmatter.slug,
         tag: node.frontmatter.slug,
+        image: node.frontmatter.image,
       },
     })
   })

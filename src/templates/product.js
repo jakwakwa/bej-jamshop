@@ -20,7 +20,7 @@ export default function Product({ data }) {
       <section sx={{ paddingTop: [60, 60, 105] }}>
         <Row styles={{ justifyContent: ["center"] }}>
           <Col styles={styles.imgWrapper}>
-            <img src={HeroDummy} alt="HeroDummy" />
+            <img src={frontmatter.image.publicURL} alt="HeroDummy" />
           </Col>
           <Col styles={styles.leadWrapper}>
             <div>
@@ -47,14 +47,17 @@ export default function Product({ data }) {
 export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
       frontmatter {
-        slug
         name
-        price
         description
+        slug
         tag
+        price
+        image {
+          publicURL
+        }
       }
+      html
     }
   }
 `

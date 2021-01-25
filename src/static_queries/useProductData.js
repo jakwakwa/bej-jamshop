@@ -7,7 +7,6 @@ const useProducts = () => {
         nodes {
           frontmatter {
             name
-            image
             excerpt
             slug
           }
