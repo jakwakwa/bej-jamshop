@@ -1,0 +1,25 @@
+---
+label: Product
+hide_body: true
+fields:
+- type: text
+  name: name
+  label: name
+- type: text
+  name: slug
+  label: slug
+- type: number
+  name: price
+  label: price
+- type: text
+  name: excerpt
+  label: excerpt
+- type: file
+  name: image
+  label: image
+- type: textarea
+  name: description
+  label: description
+- type: text
+  name: tag
+  label: tag

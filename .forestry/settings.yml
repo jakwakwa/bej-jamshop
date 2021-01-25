@@ -9,7 +9,7 @@ sections:
   label: Product Page
   create: all
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
 - type: heading
   label: Content
 - type: directory
