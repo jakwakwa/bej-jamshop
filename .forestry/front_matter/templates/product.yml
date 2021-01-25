@@ -26,4 +26,6 @@ fields:
     maxSize: 64
   label: Image
 pages:
+- content/products/great_dummy.md
+- content/products/wooden_dummy.md
 - content/products/wooden_dummy_pro.md
