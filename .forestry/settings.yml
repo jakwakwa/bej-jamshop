@@ -12,14 +12,6 @@ sections:
   new_doc_ext: md
 - type: heading
   label: Content
-- type: directory
-  path: content/posts
-  label: Blog Posts
-  create: documents
-  match: "**/*"
-  new_doc_ext: md
-  templates:
-  - blog-post
 - type: document
   path: content/data/authors.yaml
   label: Author List
