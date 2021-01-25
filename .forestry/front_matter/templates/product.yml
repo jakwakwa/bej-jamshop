@@ -25,6 +25,7 @@ fields:
   config:
     maxSize: 64
   label: Image
+  default: "/content/images/dumy.svg"
 pages:
 - content/products/basic_dummy.md
 - content/products/basic_dummy_x.md
