@@ -25,3 +25,5 @@ fields:
   config:
     maxSize: 64
   label: Image
+pages:
+- content/products/wooden_dummy_pro.md
