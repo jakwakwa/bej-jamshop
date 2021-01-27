@@ -50,11 +50,24 @@ const Cart = ({ products }) => {
   return (
     <>
       <img sx={styles.cartIcon} src={CartImg}></img>
-      {console.log(cartItems)}
-      {cartItems.length <= 0 ? null : (
-        <div sx={styles.cartWrapper}>{cartItems}</div>
-      )}
 
+      {cartItems.length <= 0 ? null : (
+        <>
+          <div
+            sx={{
+              backgroundColor: "#000",
+              width: "100vw",
+              height: "100vh",
+              position: "fixed",
+              top: 0,
+              left: 0,
+              opacity: "70%",
+              zIndex: "1",
+            }}
+          ></div>
+          <div sx={styles.cartWrapper}>{cartItems}</div>
+        </>
+      )}
       <Row styles={styles.cardCols}>
         {items.map((product) => (
           <ProductCard
@@ -85,6 +98,7 @@ const styles = {
   },
   cartWrapper: {
     position: "fixed",
+    zIndex: "2",
     top: "60px",
     right: "20px",
     border: "3px solid #969393",
