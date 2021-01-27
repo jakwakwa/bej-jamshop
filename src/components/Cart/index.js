@@ -115,7 +115,7 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
-    "> section": {
+    "> div": {
       margin: "20px 0 0 20px",
       flexGrow: 1,
       width: "calc(100% * (1/4) - 20px - 1px)",

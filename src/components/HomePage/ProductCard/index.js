@@ -8,24 +8,25 @@ const ProductCard = ({ product, onSubmit }) => {
   const { name, excerpt, slug } = product
 
   return (
-    <section>
-      <div sx={styles.productWrapper}>
-        <img src={HeroDummy} sx={styles.prodImg} />
-        <Link sx={{ variant: "text.link" }} to={`product/${slug}`}>
-          <h3>{name}</h3>
-        </Link>
+    <div sx={{ position: "relative" }}>
+      <Link sx={{ variant: "text.link" }} to={`product/${slug}`}>
+        <div sx={styles.productWrapper}>
+          <img src={HeroDummy} sx={styles.prodImg} />
 
-        <p>{excerpt}</p>
-        <div sx={styles.buttonWrapper}>
-          <input
-            sx={styles.addToCartBtn}
-            type="submit"
-            value="+"
-            onClick={onSubmit}
-          />
+          <h3>{name}</h3>
+
+          <p>{excerpt}</p>
         </div>
+      </Link>
+      <div sx={styles.buttonWrapper}>
+        <input
+          sx={styles.addToCartBtn}
+          type="submit"
+          value="+"
+          onClick={onSubmit}
+        />
       </div>
-    </section>
+    </div>
   )
 }
 
