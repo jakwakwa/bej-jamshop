@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useState, useEffect } from "react"
 import { Row } from "../../components/Grid/"
-import { Container, jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import ProductCard from "../HomePage/ProductCard/index"
 import CartImg from "../../../content/images/elements/cart.svg"
 
@@ -10,6 +10,8 @@ const Cart = ({ products }) => {
 
   const [cart, setCart] = useState([])
   const [cartTotal, setCartTotal] = useState(0)
+  const [showText, setShowText] = useState(true)
+  const onDivClick = () => setShowText(false)
 
   const total = () => {
     let totalVal = 0
@@ -18,6 +20,7 @@ const Cart = ({ products }) => {
     }
     setCartTotal(totalVal)
   }
+
   useEffect(() => {
     total()
   }, [cart])
@@ -27,10 +30,11 @@ const Cart = ({ products }) => {
     hardCopy = hardCopy.filter((cartItem) => cartItem.slug !== el.slug)
     setCart(hardCopy)
   }
+
   const addToCart = (el) => {
     setCart([...cart, el])
+    setShowText(true)
   }
-  // const listItems = items.map((el) => <div>{`${el.key}`}</div>)
 
   const cartItems = cart.map((el) => (
     <>
@@ -49,22 +53,26 @@ const Cart = ({ products }) => {
 
   return (
     <>
+      <div sx={styles.cartTotal}>{cartItems.length}</div>
       <img sx={styles.cartIcon} src={CartImg}></img>
 
-      {cartItems.length <= 0 ? null : (
+      {cartItems.length <= 0 || !showText ? null : (
         <>
-          <div
-            sx={{
-              backgroundColor: "#000",
-              width: "100vw",
-              height: "100vh",
-              position: "fixed",
-              top: 0,
-              left: 0,
-              opacity: "70%",
-              zIndex: "1",
-            }}
-          ></div>
+          {showText ? (
+            <div
+              onClick={onDivClick}
+              sx={{
+                backgroundColor: "#000",
+                width: "100vw",
+                height: "100vh",
+                position: "fixed",
+                top: 0,
+                left: 0,
+                opacity: "70%",
+                zIndex: "1",
+              }}
+            ></div>
+          ) : null}
           <div sx={styles.cartWrapper}>{cartItems}</div>
         </>
       )}
@@ -92,10 +100,27 @@ const styles = {
   },
 
   cartIcon: {
-    position: "absolute",
+    position: "fixed",
     top: "20px",
     right: "20px",
+    zIndex: 3,
   },
+
+  cartTotal: {
+    zIndex: 4,
+    position: "fixed",
+    top: "11px",
+    right: "8px",
+    fontSize: "12px",
+    background: "black",
+    width: "20px",
+    height: "20px",
+    textAlign: "center",
+    paddingTop: "3px",
+    borderRadius: "50%",
+    fontWeight: 900,
+  },
+
   cartWrapper: {
     position: "fixed",
     zIndex: "2",
@@ -106,11 +131,7 @@ const styles = {
     borderRadius: "2px",
     width: "281px",
   },
-  // cartCols: {
-  //   display: "flex",
-  //   flexDirection: "row",
-  //   justifyContent: "flex-start",
-  // },
+
   cardCols: {
     display: "flex",
     flexDirection: "row",
@@ -121,6 +142,7 @@ const styles = {
       width: "calc(100% * (1/4) - 20px - 1px)",
     },
   },
+
   prodImg: {
     display: "block",
     marginLeft: "auto",
