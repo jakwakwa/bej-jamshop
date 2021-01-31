@@ -4,6 +4,17 @@ import { Row } from "../../components/Grid/"
 import { jsx } from "theme-ui"
 import ProductCard from "../HomePage/ProductCard/index"
 import CartImg from "../../../content/images/elements/cart.svg"
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper"
+
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/swiper.scss"
+import "swiper/components/navigation/navigation.scss"
+import "swiper/components/pagination/pagination.scss"
+import "swiper/components/scrollbar/scrollbar.scss"
+import "../../styles/swiper-overrides.scss"
+
+// install Swiper components
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 const Cart = ({ products }) => {
   const items = products
@@ -76,14 +87,27 @@ const Cart = ({ products }) => {
           <div sx={styles.cartWrapper}>{cartItems}</div>
         </>
       )}
-      <Row styles={styles.cardCols}>
-        {items.map((product) => (
-          <ProductCard
-            onSubmit={() => addToCart(product.slug)}
-            key={product.slug}
-            product={product}
-          />
-        ))}
+      <Row styles={styles.cardCols}></Row>
+
+      <Row>
+        <Swiper
+          spaceBetween={40}
+          slidesPerView={4}
+          navigation
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+          sx={{ marginTop: "64px", paddingLeft: "50px", paddingRight: "50px" }}
+        >
+          {items.map((product) => (
+            <SwiperSlide>
+              <ProductCard
+                onSubmit={() => addToCart(product.slug)}
+                key={product.slug}
+                product={product}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Row>
     </>
   )
@@ -137,7 +161,7 @@ const styles = {
     flexDirection: "row",
     justifyContent: "flex-start",
     "> div": {
-      margin: "20px 0 0 20px",
+      margin: "20px",
       flexGrow: 1,
       width: "calc(100% * (1/4) - 20px - 1px)",
     },
@@ -186,5 +210,9 @@ const styles = {
     width: "20px",
     height: "20px",
     align: "right",
+  },
+
+  ".swiper-button-next": {
+    color: "#fff",
   },
 }
