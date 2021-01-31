@@ -7,7 +7,7 @@ import { jsx, Styled } from "theme-ui"
 import SEO from "../components/SEO"
 import Hero from "../components/HomePage/Hero/index"
 import ProductList from "../components/HomePage/ProductList/index"
-import Cart from "../components/Cart/index"
+import Products from "../components/Products/Products"
 
 function IndexPage() {
   const products = useProductData()
@@ -19,7 +19,7 @@ function IndexPage() {
         <Row>
           <ProductList />
         </Row>
-        <Cart products={products} />
+        <Products products={products} />
       </Container>
     </Layout>
   )
