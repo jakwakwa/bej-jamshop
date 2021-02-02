@@ -1,5 +1,5 @@
 ---
-image: "/content/images/dumy.svg"
+image: "/content/images/products/dumy.svg"
 name: Wooden Dummy Pro Two
 slug: new-product-02
 price: 40
