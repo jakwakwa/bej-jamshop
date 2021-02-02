@@ -39,9 +39,8 @@ const Products = ({ products }) => {
     setCart(hardCopy)
   }
 
-  const addToCart = (el) => {
+  const addToCart = (el, img) => {
     setCart([...cart, el])
-    setShowText(true)
   }
 
   return (
@@ -51,12 +50,14 @@ const Products = ({ products }) => {
         cart={cart}
         cartTotal={cartTotal}
         showText={showText}
+        setShowText={setShowText}
         removeFromCart={removeFromCart}
+        products={items}
       />
 
       <Row>
         <Swiper
-          spaceBetween={40}
+          spaceBetween={50}
           slidesPerView={4}
           navigation
           sx={{ marginTop: "64px", paddingLeft: "50px", paddingRight: "50px" }}
@@ -64,7 +65,7 @@ const Products = ({ products }) => {
           {items.map((product) => (
             <SwiperSlide>
               <ProductCard
-                onSubmit={() => addToCart(product.slug)}
+                onSubmit={() => addToCart(product.slug, product.image)}
                 key={product.slug}
                 product={product}
               />

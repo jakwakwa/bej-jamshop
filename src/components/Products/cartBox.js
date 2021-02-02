@@ -1,34 +1,65 @@
 /** @jsx jsx */
-import React from "react"
+import React, { useState } from "react"
 import { jsx } from "theme-ui"
 import CartImg from "../../../content/images/elements/cart.svg"
 
-const CartBox = ({ cart, showText, onDivClick, removeFromCart }) => {
+const CartBox = ({
+  cart,
+  showText,
+  setShowText,
+  onDivClick,
+  removeFromCart,
+  products,
+}) => {
+  const [showCart, setShowCart] = useState(false)
+
+  // getProductImageSrc = (slug) => {
+  //   const result = products.filter((product) => product.slug === slug)
+  //   return result
+  // }
+
+  const productImageSrc = (element) => {
+    const result = products.filter((product) => product.slug === element)
+    return result.image
+  }
+
   return (
     <>
-      <div sx={styles.cartTotal}>{cart.length}</div>
+      <div
+        onClick={
+          cart.length > 0
+            ? () => {
+                setShowCart(true)
+                setShowText(true)
+              }
+            : null
+        }
+        sx={styles.cartTotal}
+      >
+        {cart.length}
+      </div>
       <img sx={styles.cartIcon} src={CartImg}></img>
-      {cart.length <= 0 || !showText ? null : (
+      {showCart && showText ? (
         <>
-          {showText ? (
-            <div
-              onClick={onDivClick}
-              sx={{
-                backgroundColor: "#000",
-                width: "100vw",
-                height: "100vh",
-                position: "fixed",
-                top: 0,
-                left: 0,
-                opacity: "70%",
-                zIndex: "1",
-              }}
-            ></div>
-          ) : null}
+          <div
+            onClick={onDivClick}
+            sx={{
+              backgroundColor: "#000",
+              width: "100vw",
+              height: "100vh",
+              position: "fixed",
+              top: 0,
+              left: 0,
+              opacity: "70%",
+              zIndex: "1",
+            }}
+          ></div>
           <div sx={styles.cartWrapper}>
             {cart.map((el) => (
               <>
-                <div sx={styles.cartContainer}>
+                {/* <img src={getProductImageSrc(el)}></img> */}
+                {console.log(productImageSrc(el))}
+                <div key={el} sx={styles.cartContainer}>
                   <span
                     sx={{ width: "170px", display: "inline-block" }}
                   >{`${el}`}</span>
@@ -44,7 +75,7 @@ const CartBox = ({ cart, showText, onDivClick, removeFromCart }) => {
             ))}
           </div>
         </>
-      )}
+      ) : null}
     </>
   )
 }
