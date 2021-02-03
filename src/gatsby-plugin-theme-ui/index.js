@@ -106,6 +106,9 @@ export default {
     p: {
       variant: "text.body",
       fontSize: 2,
+      width: ["300px", null, null, "500px"],
+      textAlign: ["center", null, "left", null],
+      margin: ["auto", null, 0, null],
       lineHeight: [1.59],
       ...bodyTextStandards,
     },

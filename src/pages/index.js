@@ -17,7 +17,11 @@ function IndexPage() {
       <Hero />
       <Container sx={{ paddingBottom: "200px" }}>
         <Row>
-          <ProductList />
+          <ProductList
+            sx={{
+              paddingTop: [60, 60, 0],
+            }}
+          />
         </Row>
         <Products products={products} />
       </Container>

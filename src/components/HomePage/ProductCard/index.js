@@ -47,7 +47,6 @@ const styles = {
     padding: "20px",
     borderRadius: "2px",
     height: "300px",
-    maxWidth: "297.5px",
   },
 
   buttonWrapper: {

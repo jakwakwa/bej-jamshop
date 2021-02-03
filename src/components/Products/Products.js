@@ -58,11 +58,24 @@ const Products = ({ products }) => {
 
       <Row>
         <Swiper
+          slidesPerView={1}
           spaceBetween={50}
-          slidesPerView={4}
           navigation
           lazy
           allowTouchMove={false}
+          breakpoints={{
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 2,
+            },
+            992: {
+              slidesPerView: 3,
+            },
+            // when window width is >= 768px
+            1458: {
+              slidesPerView: 4,
+            },
+          }}
           sx={{ marginTop: "64px", paddingLeft: "50px", paddingRight: "50px" }}
         >
           {items.map((product) => (

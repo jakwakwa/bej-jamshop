@@ -18,7 +18,12 @@ export default function Product({ data }) {
     <Layout>
       <SEO title="Product" />
       <section sx={{ paddingTop: [60, 60, 105] }}>
-        <Row styles={{ justifyContent: ["center"] }}>
+        <Row
+          styles={{
+            justifyContent: ["center"],
+            textAlign: ["center", null, "left"],
+          }}
+        >
           <Col styles={styles.imgWrapper}>
             <img src={frontmatter.image.publicURL} alt="HeroDummy" />
           </Col>
@@ -63,7 +68,7 @@ export const pageQuery = graphql`
 `
 const styles = {
   imgWrapper: {
-    width: ["1", "1", "2/5", null, 450],
+    width: ["2", "2", "2/5", null, 450],
     textAlign: ["center", "center", "left"],
     order: [2, 2, 1],
     img: {
