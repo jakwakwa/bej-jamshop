@@ -20,6 +20,15 @@ module.exports = {
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-sass",
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "src",

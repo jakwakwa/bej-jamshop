@@ -63,7 +63,7 @@ const Products = ({ products }) => {
           sx={{ marginTop: "64px", paddingLeft: "50px", paddingRight: "50px" }}
         >
           {items.map((product) => (
-            <SwiperSlide>
+            <SwiperSlide key={product.slug}>
               <ProductCard
                 onSubmit={() => addToCart(product.slug, product.image)}
                 key={product.slug}

@@ -11,6 +11,9 @@ const useProducts = () => {
             excerpt
             slug
             price
+            image {
+              publicURL
+            }
           }
         }
       }
@@ -18,7 +21,7 @@ const useProducts = () => {
   `)
   return data.allMarkdownRemark.nodes.map((product) => ({
     name: product.frontmatter.name,
-    image: product.frontmatter.image,
+    image: product.frontmatter.image.publicURL,
     excerpt: product.frontmatter.excerpt,
     slug: product.frontmatter.slug,
     price: product.frontmatter.price,

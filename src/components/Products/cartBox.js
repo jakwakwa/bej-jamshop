@@ -13,19 +13,31 @@ const CartBox = ({
 }) => {
   const [showCart, setShowCart] = useState(false)
 
-  // getProductImageSrc = (slug) => {
-  //   const result = products.filter((product) => product.slug === slug)
-  //   return result
-  // }
-
   const productImageSrc = (element) => {
-    const result = products.filter((product) => product.slug === element)
-    return result.image
+    const result = products.filter((product) => {
+      if (product.slug === element) {
+        const img = product.image
+        const price = product.price
+        return { im: img, pric: price }
+      }
+    })
+    return result[0].image
+  }
+
+  const productPrice = (element) => {
+    const result = products.filter((product) => {
+      if (product.slug === element) {
+        const price = product.price
+        return price
+      }
+    })
+    return result[0].price
   }
 
   return (
     <>
-      <div
+      <div sx={styles.cartTotal}>{cart.length}</div>
+      <img
         onClick={
           cart.length > 0
             ? () => {
@@ -34,11 +46,9 @@ const CartBox = ({
               }
             : null
         }
-        sx={styles.cartTotal}
-      >
-        {cart.length}
-      </div>
-      <img sx={styles.cartIcon} src={CartImg}></img>
+        sx={styles.cartIcon}
+        src={CartImg}
+      ></img>
       {showCart && showText ? (
         <>
           <div
@@ -57,22 +67,31 @@ const CartBox = ({
           <div sx={styles.cartWrapper}>
             {cart.map((el) => (
               <>
-                {/* <img src={getProductImageSrc(el)}></img> */}
-                {console.log(productImageSrc(el))}
                 <div key={el} sx={styles.cartContainer}>
-                  <span
-                    sx={{ width: "170px", display: "inline-block" }}
-                  >{`${el}`}</span>
-
-                  <input
-                    sx={styles.removeBtn}
-                    type="submit"
-                    value="-"
-                    onClick={() => removeFromCart(el)}
+                  <img
+                    sx={{
+                      display: "inline",
+                      paddingTop: "10px",
+                      position: "absolute",
+                      top: "-2px",
+                      left: "18px",
+                      width: "24px",
+                    }}
+                    src={productImageSrc(el)}
+                    alt={el}
                   />
+                  <span
+                    sx={{
+                      width: "180px",
+                      display: "inline-block",
+                      paddingLeft: "25px",
+                    }}
+                  >{`${el}`}</span>
+                  <span>${productPrice(el)}</span>
                 </div>
               </>
             ))}
+            <input sx={styles.removeBtn} type="submit" value="Submit" />
           </div>
         </>
       ) : null}
@@ -88,6 +107,7 @@ const styles = {
     padding: "10px 20px",
     marginBottom: "5px",
     width: "100%",
+    position: "relative",
   },
 
   cartIcon: {
@@ -121,6 +141,7 @@ const styles = {
     background: "#220538",
     borderRadius: "2px",
     width: "281px",
+    padding: "40px 0",
   },
 
   cardCols: {
@@ -171,12 +192,15 @@ const styles = {
     background: "#AB528D",
     border: 0,
     color: "#fff",
-    fontSize: "8px",
+    width: "89px",
+    padding: "7px",
     fontWeight: 700,
-    borderRadius: "50%",
-    width: "20px",
-    height: "20px",
-    align: "right",
+    textTransform: "uppercase",
+    textTransform: "uppercase",
+    textAlign: "center",
+    float: "right",
+    marginTop: "20px",
+    marginRight: "20px",
   },
 
   ".swiper-button-next": {
