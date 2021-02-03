@@ -4,15 +4,16 @@ import { Row } from "../Grid"
 import { jsx } from "theme-ui"
 import CartBox from "./cartBox"
 import ProductCard from "../HomePage/ProductCard/index"
-
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper"
+// swiper component imports
+import SwiperCore, { Navigation, Lazy } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/swiper.scss"
 import "swiper/components/navigation/navigation.scss"
+import "swiper/components/lazy/lazy.scss"
 import "../../styles/swiper-overrides.scss"
 
 // install Swiper components
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
+SwiperCore.use([Navigation, Lazy])
 
 const Products = ({ products }) => {
   const items = products
@@ -39,7 +40,7 @@ const Products = ({ products }) => {
     setCart(hardCopy)
   }
 
-  const addToCart = (el, img) => {
+  const addToCart = (el) => {
     setCart([...cart, el])
   }
 
@@ -60,6 +61,8 @@ const Products = ({ products }) => {
           spaceBetween={50}
           slidesPerView={4}
           navigation
+          lazy
+          allowTouchMove={false}
           sx={{ marginTop: "64px", paddingLeft: "50px", paddingRight: "50px" }}
         >
           {items.map((product) => (

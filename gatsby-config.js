@@ -18,16 +18,8 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-yaml",
     "gatsby-plugin-theme-ui",
+    `gatsby-plugin-emotion`,
     "gatsby-plugin-sass",
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `tomato`,
-        // Disable the loading spinner.
-        showSpinner: true,
-      },
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

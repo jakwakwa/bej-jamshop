@@ -168,6 +168,7 @@ export default {
       color: WHITE,
       textDecoration: "none",
       fontWeight: "500",
+      transition: "0.5s",
       "&:hover": {
         color: "text.accent",
       },

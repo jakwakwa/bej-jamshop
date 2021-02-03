@@ -1,30 +1,27 @@
 /** @jsx jsx */
 import React, { useState } from "react"
 import { jsx } from "theme-ui"
+import { keyframes } from "@emotion/react"
 import CartImg from "../../../content/images/elements/cart.svg"
 
-const CartBox = ({
-  cart,
-  showText,
-  setShowText,
-  onDivClick,
-  removeFromCart,
-  products,
-}) => {
+const moveDown = keyframes({ from: { top: "-100px" }, to: { top: "60px" } })
+const fadeIn = keyframes({ from: { opacity: 0 }, to: { opacity: 0.5 } })
+
+const CartBox = ({ cart, showText, setShowText, onDivClick, products }) => {
   const [showCart, setShowCart] = useState(false)
 
-  const productImageSrc = (element) => {
+  const getProductImageSrc = (element) => {
     const result = products.filter((product) => {
       if (product.slug === element) {
         const img = product.image
-        const price = product.price
-        return { im: img, pric: price }
+
+        return img
       }
     })
     return result[0].image
   }
 
-  const productPrice = (element) => {
+  const getProductPrice = (element) => {
     const result = products.filter((product) => {
       if (product.slug === element) {
         const price = product.price
@@ -60,10 +57,14 @@ const CartBox = ({
               position: "fixed",
               top: 0,
               left: 0,
-              opacity: "70%",
-              zIndex: "1",
+              animationName: fadeIn,
+              animationDuration: "0.5s",
+              animationFillMode: "backwards",
+              opacity: 0.5,
+              zIndex: "2",
             }}
           ></div>
+
           <div sx={styles.cartWrapper}>
             {cart.map((el) => (
               <>
@@ -77,7 +78,7 @@ const CartBox = ({
                       left: "18px",
                       width: "24px",
                     }}
-                    src={productImageSrc(el)}
+                    src={getProductImageSrc(el)}
                     alt={el}
                   />
                   <span
@@ -87,11 +88,11 @@ const CartBox = ({
                       paddingLeft: "25px",
                     }}
                   >{`${el}`}</span>
-                  <span>${productPrice(el)}</span>
+                  <span>${getProductPrice(el)}</span>
                 </div>
               </>
             ))}
-            <input sx={styles.removeBtn} type="submit" value="Submit" />
+            <input sx={styles.submitBtn} type="submit" value="Submit" />
           </div>
         </>
       ) : null}
@@ -120,75 +121,34 @@ const styles = {
   cartTotal: {
     zIndex: 4,
     position: "fixed",
-    top: "11px",
     right: "8px",
     fontSize: "12px",
-    background: "black",
+    background: "#AB528D",
     width: "20px",
     height: "20px",
     textAlign: "center",
     paddingTop: "3px",
     borderRadius: "50%",
     fontWeight: 900,
+    top: "10px",
   },
 
   cartWrapper: {
     position: "fixed",
     zIndex: "2",
-    top: "60px",
     right: "20px",
     border: "3px solid #969393",
     background: "#220538",
     borderRadius: "2px",
     width: "281px",
     padding: "40px 0",
+    top: "60px",
+    animationName: moveDown,
+    animationDuration: "0.5s",
+    animationFillMode: "backwards",
   },
 
-  cardCols: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    "> div": {
-      margin: "20px",
-      flexGrow: 1,
-      width: "calc(100% * (1/4) - 20px - 1px)",
-    },
-  },
-
-  prodImg: {
-    display: "block",
-    marginLeft: "auto",
-    marginRight: "auto",
-    height: "92px",
-  },
-
-  productWrapper: {
-    position: "relative",
-    border: "3px solid #969393",
-    padding: "20px",
-    borderRadius: "2px",
-  },
-
-  buttonWrapper: {
-    display: "flex",
-    justifyContent: "flex-end",
-    position: "absolute",
-    right: "8px",
-    bottom: "8px",
-  },
-
-  addToCartBtn: {
-    background: "#AB528D",
-    border: 0,
-    color: "#fff",
-    fontSize: "32px",
-    fontWeight: 700,
-    borderRadius: "50%",
-    width: "50px",
-    height: "50px",
-    align: "right",
-  },
-  removeBtn: {
+  submitBtn: {
     background: "#AB528D",
     border: 0,
     color: "#fff",
@@ -201,9 +161,5 @@ const styles = {
     float: "right",
     marginTop: "20px",
     marginRight: "20px",
-  },
-
-  ".swiper-button-next": {
-    color: "#fff",
   },
 }

@@ -38,6 +38,7 @@ const styles = {
     marginLeft: "auto",
     marginRight: "auto",
     height: "92px",
+    maxWidth: "200px",
   },
 
   productWrapper: {
@@ -46,6 +47,7 @@ const styles = {
     padding: "20px",
     borderRadius: "2px",
     height: "300px",
+    maxWidth: "297.5px",
   },
 
   buttonWrapper: {
@@ -57,7 +59,7 @@ const styles = {
   },
 
   addToCartBtn: {
-    background: "#AB528D",
+    backgroundColor: "#AB528D",
     border: 0,
     color: "#fff",
     fontSize: "32px",
@@ -66,5 +68,9 @@ const styles = {
     width: "50px",
     height: "50px",
     align: "right",
+    transition: "0.5s",
+    "&:hover": {
+      backgroundColor: "text.accent",
+    },
   },
 }
