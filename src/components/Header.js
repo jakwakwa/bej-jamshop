@@ -27,10 +27,6 @@ export default function Header() {
   )
 }
 
-Header.propTypes = {}
-
-Header.defaultProps = {}
-
 const styles = {
   header: {
     padding: "20px 0",

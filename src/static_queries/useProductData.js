@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 const useProducts = () => {
   const data = useStaticQuery(graphql`
     query {
-      # allMarkdownRemark(limit: 4) {
       allMarkdownRemark(filter: { frontmatter: { tag: { eq: "popular" } } }) {
         nodes {
           frontmatter {

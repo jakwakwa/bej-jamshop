@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx } from "theme-ui"
-// import PropTypes from "prop-types"
-
 import Header from "../Header"
 
 export default function Layout({ children }) {
@@ -14,7 +12,3 @@ export default function Layout({ children }) {
     </>
   )
 }
-
-// Layout.propTypes = {
-//   children: PropTypes.node.isRequired,
-// }

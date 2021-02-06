@@ -4,11 +4,9 @@ import { jsx, Styled } from "theme-ui"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import { graphql } from "gatsby"
-import { Container, Row, Col } from "../components/Grid"
+import { Row, Col } from "../components/Grid"
 
 import HeroBackground from "../../content/images/elements/hero_background.svg"
-import HeroDecor from "../../content/images/elements/hero_decor.svg"
-import HeroDummy from "../../content/images/products/dumy.svg"
 
 export default function Product({ data }) {
   const { markdownRemark } = data
