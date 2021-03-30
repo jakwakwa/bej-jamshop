@@ -1,8 +1,8 @@
 ---
-image: "/content/images/dumy.svg"
-name: Wooden Dummy Pro Five
-slug: wooden-dummy-pro-05
-price: 60
+image: "/content/images/products/dumy.svg"
+name: Illustration Placeholder 04
+slug: illustration-ph-04
+price: 59
 excerpt: Something that you truly need, but haven’t know about it yet
 description: |-
   Something that you truly need, but haven’t know about it yet. Multiple winner of Community Awarads.
