@@ -1,6 +1,6 @@
 ---
 image: "/content/images/dumy.svg"
-name: Wooden Dummy Pro Six
+name: Illustration Placeholder 03
 slug: wooden-dummy-pro-06
 price: 999
 excerpt: Something that you truly need, but haven’t know about it yet
