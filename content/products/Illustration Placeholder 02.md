@@ -1,5 +1,5 @@
 ---
-image: "/content/images/dumy.svg"
+image: "/content/images/photo-1591860401771-bf99883bdc0c.jpeg"
 name: Illustration Placeholder 02
 slug: wooden-dummy-pro-03
 price: 39
