@@ -20,7 +20,7 @@ export default function Header() {
         }}
       >
         <Link to="/" sx={styles.mainLink}>
-          JAM SHOP
+          EMMBERLY ILLUSTRATION SHOP
         </Link>
       </Container>
     </header>

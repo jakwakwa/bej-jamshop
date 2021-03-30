@@ -3,7 +3,8 @@ import { jsx, Styled } from "theme-ui"
 import { Row, Col } from "../../Grid"
 
 import HeroBackground from "../../../../content/images/elements/hero_background.svg"
-import HeroImage from "../../../../content/images/elements/monitor.svg"
+//import HeroImage from "../../../../content/images/elements/monitor.svg"
+import HeroImage from "../../../../content/images/elements/kate.jpeg"
 import HeroDecor from "../../../../content/images/elements/hero_decor.svg"
 
 function HomepageHero() {
@@ -11,17 +12,20 @@ function HomepageHero() {
     <section sx={{ paddingTop: [60, 60, 105] }}>
       <Row styles={{ justifyContent: ["center"] }}>
         <Col styles={styles.imgWrapper}>
-          <img src={HeroImage} alt="Vector Monitor" sx={{ maxWidth: "1" }} />
+          <img
+            src={HeroImage}
+            alt="Vector Monitor"
+            sx={{ maxWidth: "1", width: "450px", borderRadius: "50%" }}
+          />
         </Col>
         <Col styles={styles.leadWrapper}>
           <Styled.h1 sx={styles.heading}>
-            Don't waste time
-            <br />
-            on boring things
+            I am Kate
+            <br />I am an artist and sell my illustrations here
           </Styled.h1>
-          <button sx={{ variant: "button.primary", mx: ["auto", null, 0] }}>
+          {/*<button sx={{ variant: "button.primary", mx: ["auto", null, 0] }}>
             GO EXPLORE
-          </button>
+          </button>*/}
         </Col>
       </Row>
       <img src={HeroBackground} sx={styles.backgroundImg} />
