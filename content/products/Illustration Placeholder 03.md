@@ -1,5 +1,5 @@
 ---
-image: "/content/images/dumy.svg"
+image: "/content/images/thumbnail_img_1173.jpeg"
 name: Illustration Placeholder 03
 slug: illustration-ph-03
 price: 999
