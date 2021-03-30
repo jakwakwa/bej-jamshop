@@ -1,5 +1,5 @@
 ---
-image: "/content/images/products/dumy.svg"
+image: "/content/images/digital-designer-9.jpeg"
 name: Illustration Placeholder 04
 slug: illustration-ph-04
 price: 59
