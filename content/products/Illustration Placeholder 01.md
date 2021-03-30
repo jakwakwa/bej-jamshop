@@ -1,5 +1,5 @@
 ---
-image: "/content/images/products/dumy.svg"
+image: "/content/images/cd24e2c6-bffd-4c9c-808f-fbf4d57b68bf__640.jpeg"
 name: Illustration Placeholder 01
 slug: new-product-02
 price: 40
