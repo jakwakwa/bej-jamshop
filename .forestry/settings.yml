@@ -8,8 +8,8 @@ sections:
     label: Content
   - type: directory
     path: content/products
-    label: Blog Posts
-    create: documents
+    label: Product Page
+    create: all
     match: "**/*"
     new_doc_ext: md
   - type: document

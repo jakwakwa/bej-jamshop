@@ -1,43 +1,43 @@
 ---
 label: Product
-hide_body: true
+hide_body: false
 fields:
-- type: text
-  name: name
-  label: name
-- type: text
-  name: slug
-  label: slug
-- type: number
-  name: price
-  label: price
-- type: text
-  name: excerpt
-  label: excerpt
-- type: textarea
-  name: description
-  label: description
-- type: text
-  name: tag
-  label: tag
-- name: image
-  type: file
-  config:
-    maxSize: 64
-  label: Image
-  default: "/content/images/dumy.svg"
+  - type: text
+    name: name
+    label: name
+  - type: text
+    name: slug
+    label: slug
+  - type: number
+    name: price
+    label: price
+  - type: text
+    name: excerpt
+    label: excerpt
+  - type: textarea
+    name: description
+    label: description
+  - type: text
+    name: tag
+    label: tag
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+    default: "/content/images/dumy.svg"
 pages:
-- content/products/basic_dummy.md
-- content/products/basic_dummy_x.md
-- content/products/dummy_club.md
-- content/products/dummy_x_pro.md
-- content/products/great_dummy.md
-- content/products/new-product-01.md
-- content/products/wooden_dummy.md
-- content/products/wooden_dummy_pro.md
-- content/products/wooden_dummy_pro_five.md
-- content/products/wooden_dummy_pro_four.md
-- content/products/wooden_dummy_pro_seven.md
-- content/products/wooden_dummy_pro_six.md
-- content/products/wooden_dummy_pro_three.md
-- content/products/wooden_dummy_pro_two.md
+  - content/products/basic_dummy.md
+  - content/products/basic_dummy_x.md
+  - content/products/dummy_club.md
+  - content/products/dummy_x_pro.md
+  - content/products/great_dummy.md
+  - content/products/new-product-01.md
+  - content/products/wooden_dummy.md
+  - content/products/wooden_dummy_pro.md
+  - content/products/wooden_dummy_pro_five.md
+  - content/products/wooden_dummy_pro_four.md
+  - content/products/wooden_dummy_pro_seven.md
+  - content/products/wooden_dummy_pro_six.md
+  - content/products/wooden_dummy_pro_three.md
+  - content/products/wooden_dummy_pro_two.md
