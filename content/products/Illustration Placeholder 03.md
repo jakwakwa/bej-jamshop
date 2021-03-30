@@ -1,7 +1,7 @@
 ---
 image: "/content/images/dumy.svg"
 name: Illustration Placeholder 03
-slug: wooden-dummy-pro-06
+slug: illustration-ph-03
 price: 999
 excerpt: Something that you truly need, but haven’t know about it yet
 description: |-
