@@ -7,13 +7,11 @@ sections:
   - type: heading
     label: Content
   - type: directory
-    path: content/posts
+    path: content/products
     label: Blog Posts
     create: documents
     match: "**/*"
     new_doc_ext: md
-    templates:
-      - blog-post
   - type: document
     path: content/data/authors.yaml
     label: Author List
