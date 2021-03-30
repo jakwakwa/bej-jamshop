@@ -1,6 +1,6 @@
 ---
 image: "/content/images/products/dumy.svg"
-name: Wooden Dummy Pro Two
+name: Illustration Placeholder 01
 slug: new-product-02
 price: 40
 excerpt: Something that you truly need, but haven’t know about it yet
