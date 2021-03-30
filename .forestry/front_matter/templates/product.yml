@@ -27,6 +27,7 @@ fields:
   label: Image
   default: "/content/images/dumy.svg"
 pages:
+- content/products/Illustration Placeholder 01.md
 - content/products/basic_dummy.md
 - content/products/basic_dummy_x.md
 - content/products/dummy_club.md
@@ -40,4 +41,3 @@ pages:
 - content/products/wooden_dummy_pro_seven.md
 - content/products/wooden_dummy_pro_six.md
 - content/products/wooden_dummy_pro_three.md
-- content/products/wooden_dummy_pro_two.md
