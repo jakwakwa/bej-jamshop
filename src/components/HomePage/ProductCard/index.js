@@ -4,16 +4,14 @@ import HeroDummy from "../../../../content/images/products/dumy.svg"
 import { Link } from "gatsby"
 
 const ProductCard = ({ product, onSubmit }) => {
-  const { name, excerpt, slug } = product
+  const { name, excerpt, slug, image } = product
 
   return (
     <div sx={{ position: "relative" }}>
       <Link sx={{ variant: "text.link" }} to={`product/${slug}`}>
         <div sx={styles.productWrapper}>
-          <img src={HeroDummy} sx={styles.prodImg} />
-
+          <img src={image} alt="HeroDummy" sx={styles.prodImg} />
           <h3>{name}</h3>
-
           <p>{excerpt}</p>
         </div>
       </Link>
